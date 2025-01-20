@@ -1,10 +1,10 @@
 // Données des projets
 const projects = [
     {
-        title: "Projet 1",
-        description: "Description du projet 1",
+        title: "Site web MarieTeam",
+        description: "Projet scolaire de création pour gérer des liaisons maritimes",
         image: "https://via.placeholder.com/300x200",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: ["HTML ", "CSS ", "JavaScript ", " PHP ", " MySQL"],
         link: "#"
     },
     {
