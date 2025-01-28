@@ -6,6 +6,12 @@
     --transition-speed: 0.3s;
 }
 
+
+#contenu{
+    display: flex;
+    justify-content: center;
+  }
+
 * {
     margin: 0;
     padding: 0;
