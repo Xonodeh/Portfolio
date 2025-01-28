@@ -35,10 +35,70 @@
                 <h1>Veille Technologique</h1>
                 <p class="typing-text">Pour mon sujet de veille technologique, 
                     j'ai choisi la place de l'IA dans le monde du développement.</p> <br>
-                <iframe src="documents portfolio/tableaucompetences$.pdf" width="100%" height="500px"></iframe>
+        </section>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                L'intelligence artificielle (IA) joue un rôle crucial dans le monde des développeurs. Ce sujet de veille
+                technologique examine les impacts de l'IA, les outils qu'elle offre, ainsi que ses implications
+                pour les professionnels du développement.
+            </p>
+        </section>
+        <section>
+            <h2>Les impacts de l'IA dans le développement</h2>
+            <p>
+                L'IA transforme les pratiques des développeurs en automatisant certaines tâches, comme la génération de
+                code ou la détection des erreurs. Elle améliore la productivité, réduit les délais et offre des
+                solutions novatrices pour répondre à des problèmes complexes. Cependant, elle soulève des défis
+                tels que l'éthique, la sécurité et la dépendance à ces outils.
+            </p>
+        </section>
+        <section id="outils" class="outils">
+            <h2>Outils de veille utilisés</h2>
+            <p>
+                GitHub Copilot : <a href="https://github.com/features/copilot" class="link" target="_blank">Un assistant IA</a> pour aider à la complétion de code
+            </p>
+            <p>
+                Feedly : <a href="https://www.feedly.com/" class="link" target="_blank">Centralisation des articles</a> et actualités sur l'IA.
+            </p>
+            <p>
+                OpenAI : <a href="https://openai.com/" class="link" target="_blank">Exploration des modèles d'IA</a> et applications innovantes.
+            </p>
         </section>
 
 
+
+        <section>
+            <h2>Actualités liées à l'IA</h2>
+            <div id="rss-feed">
+                <p>Chargement des actualités...</p>
+            </div>
+        </section>
+        
+        <script>
+            const rssUrl = "https://www.france24.com/fr/rss"; // Exemple de flux RSS
+            const rssContainer = document.getElementById("rss-feed");
+        
+            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
+                .then(response => response.json())
+                .then(data => {
+                    rssContainer.innerHTML = "";
+                    data.items.slice(0, 5).forEach(item => {
+                        const article = document.createElement("div");
+                        article.innerHTML = `
+                            <h3><a href="${item.link}" target="_blank" class="link">${item.title}</a></h3>
+                            <p>${item.pubDate}</p>
+                            <p>${item.description.slice(0, 100)}...</p>
+                        `;
+                        rssContainer.appendChild(article);
+                    });
+                })
+                .catch(error => {
+                    rssContainer.innerHTML = "<p>Impossible de charger les actualités pour le moment.</p>";
+                    console.error("Erreur lors de la récupération du flux RSS :", error);
+                });
+        </script>
+        
     </main>
 
     <footer>

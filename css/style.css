@@ -4,6 +4,7 @@
     --background-color: #1a1a1a;
     --text-color: #2ecc71;
     --transition-speed: 0.3s;
+    text-align: center;
 }
 
 
@@ -27,6 +28,7 @@ body {
 
 
 
+
 #nael{
     border-radius: 150px;
 }
@@ -44,6 +46,17 @@ nav {
     z-index: 1000;
 }
 
+.link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+.link:hover {
+    color: #0056b3;
+    border-bottom-color: #0056b3;
+}
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
